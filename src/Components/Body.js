@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 const Body = ()=>{
     const isMenuOpen = useSelector((store)=>store.app.isMenuOpen);
-    console.log(isMenuOpen)
+
     return(
         <div className="flex">
             { isMenuOpen && <Sidebar /> }

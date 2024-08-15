@@ -3,7 +3,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = ()=>{
     return(
-        <div className="sidebar w-1/6 p-3">
+        <div className="sidebar w-1/6 p-3 shadow-lg">
             <div className="flex flex-col gap-2">
                 <div>
                     <FontAwesomeIcon icon={ faArrowRight } />

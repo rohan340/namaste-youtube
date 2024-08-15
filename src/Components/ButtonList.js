@@ -2,7 +2,7 @@ const ButtonList = ({ name }) => {
 
     return (
         <>
-            <button className="bg-gray-300 w-20 h-8 rounded">{name}</button>
+            <button className="bg-gray-200 font-bold p-3 text-center cursor-pointer rounded">{name}</button>
         </>
     )
 }
