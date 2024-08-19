@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import usePopularVideos from "../Hooks/usePopularvideos";
 import VideoCards from "./VideoCards";
 
@@ -12,7 +13,7 @@ const VideoContainer = () => {
     return (
         <>
             {popularVideos.map((video, index) => (
-                <VideoCards key={index} info={video} />
+                <Link key={index} to={"/watch?v=" + video.id}><VideoCards info={video} /></Link>
             ))}
         </>
     );

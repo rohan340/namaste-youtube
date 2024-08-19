@@ -5,8 +5,8 @@ import VideoContainer from "./VideoContainer";
 const MainContainer = ()=>{
     
     return(
-        <div className="flex flex-col p-3 border shadow-lg">
-            <div className="flex gap-4">
+        <div className="flex flex-col p-3 border shadow-lg w-full">
+            <div className="flex gap-4 p-2">
                 {
                     BUTTON_LIST.map((item, id)=>(
                         <ButtonList key={ id } name={ item }/>

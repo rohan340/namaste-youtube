@@ -6,7 +6,6 @@ import { addPopularVideos } from "../Utils/appSlice";
 const usePopularVideos = ()=>{
     const dispatch = useDispatch();
     const popularVideos = useSelector((store)=>store.app.popularVideos);
-
     const fetchYoutubePopularVideos = async()=>{
         try{
             const data = await fetch(YOUTUBE_API_URL);
