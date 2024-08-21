@@ -73,18 +73,19 @@ const Header = () => {
                             setSearchQuery(e.target.value);
                         }}
                         value={searchQuery}
-                        onBlur={() => setSearchSuggestions([])}
                     />
+
                     {searchSuggestions.length > 0 && (
-                        <ul className="fixed bg-white top-[50px] w-[44%] pl-3 pt-1 pb-1 rounded-xl shadow-lg">
+                        <ul  className="fixed bg-white top-[50px] w-[44%] pl-3 pt-1 pb-1 rounded-xl shadow-lg">
+
                             {searchSuggestions.map((item, id) => (
-                                <li
-                                    key={id}
-                                    className="flex gap-[14px] cursor-pointer items-center m-1"
-                                >
-                                    <FontAwesomeIcon icon={faMagnifyingGlass} size="xs" /> {item}
-                                </li>
+                                <Link key={id} onClick={() => setSearchSuggestions([])} to={"/results?search_query=" + item}>
+                                    <li  className="flex gap-[14px] cursor-pointer items-center m-1">
+                                        <FontAwesomeIcon icon={faMagnifyingGlass} size="xs" /> {item}
+                                    </li>
+                                </Link>
                             ))}
+
                         </ul>
                     )}
                 </div>

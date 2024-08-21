@@ -1,7 +1,8 @@
-const VideoCards = ({ info })=>{
+import { formatViewsCount, convertToRelativeTime } from "../Hooks/useFormatDateView";
 
+const VideoCards = ({ info })=>{
     const { snippet, statistics  } = info;
-    const { channelTitle, thumbnails, title } = snippet;
+    const { channelTitle, thumbnails, title, publishedAt } = snippet;
 
     return(
         <div className="flex flex-col gap-4 p-2 shadow-md w-72 cursor-pointer">
@@ -9,7 +10,8 @@ const VideoCards = ({ info })=>{
             <div className="flex flex-col">
                 <h1 className="font-bold truncate">{ title }</h1>
                 <p>{ channelTitle }</p>
-                <p>{ statistics.viewCount }</p>
+                <p>{ formatViewsCount(statistics.viewCount) } views</p>
+                <p>{ convertToRelativeTime(publishedAt) } </p>
             </div>
         </div>
     )

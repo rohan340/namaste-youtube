@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
+import { YOUTUBE_API_KEY } from "../Utils/contants";
 
 const WatchPage = () => {
-    const [ searchParams ] = useSearchParams();
+    const [ searchParams ] = useSearchParams();    
     
     return (
         <div className="p-2">
