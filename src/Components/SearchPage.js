@@ -28,7 +28,6 @@ const SearchPage = () => {
                 `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoIds}&key=${YOUTUBE_API_KEY}`
             );
             const videoJson = await videoResponse.json();
-            console.log(videoJson)
             setSearchResults(videoJson.items);
         } catch (error) {
             console.error("Error fetching search results:", error);

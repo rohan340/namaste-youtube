@@ -2,19 +2,27 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const appSlice = createSlice({
     name: 'app',
-    initialState:{
+    initialState: {
         isMenuOpen: true,
-        popularVideos: null,
+        video: {
+            popularVideos: [],
+            nextPageToken: null
+        },
+        videoCategories:[],
     },
-    reducers:{
-        toggleMenu:(state, action)=>{
+    reducers: {
+        toggleMenu: (state) => {
             state.isMenuOpen = !state.isMenuOpen;
         },
-        addPopularVideos:(state, action)=>{
-            state.popularVideos = action.payload;
+        addVideos: (state, action) => {
+            state.video.popularVideos = [...state.video.popularVideos, ...action.payload.videos];
+            state.video.nextPageToken = action.payload.nextPageToken;
+        },
+        addCategories:(state, action)=>{
+            state.videoCategories = action.payload;
         }
     }
 });
 
-export const { toggleMenu, addPopularVideos } = appSlice.actions;
+export const { toggleMenu, addVideos, addCategories } = appSlice.actions;
 export default appSlice.reducer;

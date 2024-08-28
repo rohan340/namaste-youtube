@@ -1,8 +1,8 @@
-const ButtonList = ({ name }) => {
-
+const ButtonList = ({ info }) => {
+    const {id, snippet} = info;
     return (
         <>
-            <button className="bg-gray-200 font-bold p-3 text-center cursor-pointer rounded">{name}</button>
+            <button id={ id } className="bg-gray-200 font-bold p-3 text-center cursor-pointer rounded">{snippet.title}</button>
         </>
     )
 }
