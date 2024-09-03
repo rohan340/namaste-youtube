@@ -65,34 +65,38 @@ const Header = () => {
                 </Link>
             </div>
             <div className="flex mt-4">
-                <div className="flex flex-col">
-                    <input
-                        className="w-[40rem] border border-gray-500 pl-4 pt-1 pb-1 rounded-l-full"
-                        type="text"
-                        onChange={(e) => {
-                            setSearchQuery(e.target.value);
-                        }}
-                        value={searchQuery}
-                    />
+                <form >
+                    <div className="flex">
+                        <input
+                            className="w-[40rem] border border-gray-500 pl-4 pt-1 pb-1 rounded-l-full"
+                            type="text"
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value);
+                            }}
+                            value={searchQuery}
+                            onBlur={()=>
+                                setSearchSuggestions([])
+                            }
+                        />
 
-                    {searchSuggestions.length > 0 && (
-                        <ul  className="fixed bg-white top-[50px] w-[44%] pl-3 pt-1 pb-1 rounded-xl shadow-lg">
+                        {searchSuggestions.length > 0 && (
+                            <ul  className="fixed bg-white top-[50px] w-[44%] pl-3 pt-1 pb-1 rounded-xl shadow-lg">
 
-                            {searchSuggestions.map((item, id) => (
-                                <Link key={id} onClick={() => setSearchSuggestions([])} to={"/results?search_query=" + item}>
-                                    <li  className="flex gap-[14px] cursor-pointer items-center m-1">
-                                        <FontAwesomeIcon icon={faMagnifyingGlass} size="xs" /> {item}
-                                    </li>
-                                </Link>
-                            ))}
+                                {searchSuggestions.map((item, id) => (
+                                    <Link key={id} onClick={() => setSearchSuggestions([])} to={"/results?search_query=" + item}>
+                                        <li  className="flex gap-[14px] cursor-pointer items-center m-1">
+                                            <FontAwesomeIcon icon={faMagnifyingGlass} size="xs" /> {item}
+                                        </li>
+                                    </Link>
+                                ))}
 
-                        </ul>
-                    )}
-                </div>
-
-                <button className="border h-[34px] border-gray-500 rounded-r-full p-1 w-10">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} size="xs" />
-                </button>
+                            </ul>
+                        )}
+                        <button className="border h-[34px] border-gray-500 rounded-r-full p-1 w-10">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} size="xs" />
+                        </button>
+                    </div>                   
+                </form>
             </div>
             <div className="flex hover:bg-blue-200 border border-blue-500 mr-8 mt-3 justify-center gap-3 h-10 w-32 rounded-full cursor-pointer">
                 <img
