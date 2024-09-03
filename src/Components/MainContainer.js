@@ -1,9 +1,9 @@
 import ButtonList from "./ButtonList";
 import { YOUTUBE_VIDEO_CATEGORY_LIST } from "../Utils/contants";
 import VideoContainer from "./VideoContainer";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCategories, addvideoCategoryId, removeVideos } from "../Utils/appSlice";
+import { addCategories } from "../Utils/appSlice";
 
 const MainContainer = ()=>{
 

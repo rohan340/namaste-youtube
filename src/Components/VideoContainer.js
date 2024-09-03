@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import VideoCards from "./VideoCards";
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import { YOUTUBE_API_URL } from "../Utils/contants";
 import { useDispatch, useSelector } from "react-redux";
 import { addLoader, addVideos } from "../Utils/appSlice";
