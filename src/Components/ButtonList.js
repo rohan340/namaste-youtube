@@ -1,8 +1,23 @@
-const ButtonList = ({ info }) => {
+import { useDispatch } from "react-redux";
+import { addvideoCategoryId, removeVideos } from "../Utils/appSlice";
+
+const ButtonList = ({ info, isActive }) => {
     const {id, snippet} = info;
+    const dispatch = useDispatch();
     return (
         <>
-            <button id={ id } className="bg-gray-200 font-bold p-3 text-center cursor-pointer rounded">{snippet.title}</button>
+            <button 
+                onClick={()=>{ 
+                    if (!isActive) {
+                        dispatch(addvideoCategoryId(id));
+                        dispatch(removeVideos());
+                    }
+                }  }
+                className={`flex items-center p-1 m-1 rounded-lg ${
+                    isActive ? "bg-black text-white" : "bg-gray-100"
+                }`}>
+                    {snippet.title}
+            </button>
         </>
     )
 }

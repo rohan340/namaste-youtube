@@ -1,66 +1,28 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { sideBarrItems } from "../Utils/contants";
 
 const Sidebar = ()=>{
     return(
-        <div className="sidebar w-1/6 p-3 shadow-lg">
-            <div className="flex flex-col gap-2">
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Home</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Shorts</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Subscriptions</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">History</span>
-                </div>
-            </div>
-            
-            <div className="flex explore flex-col gap-2 mt-4">
-                <h1 className="text-2xl font-bold">Explore</h1>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Trending</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Shopping</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Music</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Movies</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Live</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Gaming</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">News</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Sports</span>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={ faArrowRight } />
-                    <span className="ml-3">Courses</span>
-                </div>
+        <div className="sidebar w-1/6 p-1 shadow-lg">
+            <div className="flex flex-col gap-1 mt-3">
+                <Link to="/">
+                    <div className="hover:bg-gray-200 cursor-pointer flex items-center p-2 rounded">
+                        <FontAwesomeIcon className="ml-1" icon={ faHome } />
+                        <span className="ml-3">Home</span>
+                    </div>
+                </Link>
+                {
+                    sideBarrItems.map((item, index)=>(
+                        <Link key={ index } to={ item.path }>
+                            <div className="hover:bg-gray-200 cursor-pointer flex items-center p-2 rounded">
+                                <img className="w-4 ml-1" src={ item.url } />
+                                <span className="ml-3">{ item.name }</span>
+                            </div>
+                        </Link>
+                    ))
+                }
             </div>
         </div>
     )
