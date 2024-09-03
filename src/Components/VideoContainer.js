@@ -61,11 +61,7 @@ const VideoContainer = ({ categoryId }) => {
             
             if (paginationToken) {
                 dispatch(addLoader(true));
-                const timer = setTimeout(() => {
-                    fetchYoutubePopularVideos(paginationToken, categoryId);
-                }, 2000);
-    
-                return () => clearTimeout(timer);
+                fetchYoutubePopularVideos(paginationToken, categoryId);
             }
         }
     };
