@@ -74,9 +74,6 @@ const Header = () => {
                                 setSearchQuery(e.target.value);
                             }}
                             value={searchQuery}
-                            onBlur={()=>
-                                setSearchSuggestions([])
-                            }
                         />
 
                         {searchSuggestions.length > 0 && (
