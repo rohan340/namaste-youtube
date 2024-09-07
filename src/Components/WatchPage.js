@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { YOUTUBE_API_KEY } from "../Utils/constants";
+import { RESPONSE_CODE, YOUTUBE_API_KEY } from "../Utils/constants";
 import { convertToRelativeTime, formatViewsCount } from "../Hooks/useFormatDateView";
 import Comments from "./Comments";
 
@@ -16,7 +16,7 @@ const WatchPage = () => {
         try{
             const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${YOUTUBE_API_KEY}&part=snippet,contentDetails,statistics`);
             
-            if(response.status === 400 || response.status === 404){
+            if(RESPONSE_CODE.includes(response.status)){
                 setError(true);
                 return;
             }
@@ -34,7 +34,7 @@ const WatchPage = () => {
     },[]);
 
     if(error){
-        return <div>No Result Found</div>
+        return <div className="flex items-center font-bold w-full justify-center">No Result Found</div>
     }
 
     if(videoDetails.length === 0){

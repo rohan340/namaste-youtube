@@ -47,7 +47,7 @@ const SearchPage = () => {
     return (
         <div className="p-3">
             {searchResults.length === 0 ? (
-                <div>No results found</div>
+                <div className="font-bold flex justify-center absolute top-32 left-[50rem]">No results found</div>
             ) : (
                 searchResults.map(item => (
                     <Link to={ "/watch?v=" + item.id } key={item.id} ><SearchResultsCards info={item} /></Link>

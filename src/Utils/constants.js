@@ -39,4 +39,6 @@ export const sideBarrItems = [
         url:'https://p.kindpng.com/picc/s/129-1293111_like-symbol-for-interface-of-black-hand-shape.png',
         path:'/'
     }
-]
+];
+
+export const RESPONSE_CODE = [400,403,404]

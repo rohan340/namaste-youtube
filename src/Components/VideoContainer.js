@@ -5,6 +5,7 @@ import { YOUTUBE_API_URL } from "../Utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addLoader, addVideos } from "../Utils/appSlice";
 import VideoCardsShimmerEffect from "./VideoCardsShimmerEffect";
+import { RESPONSE_CODE } from "../Utils/constants";
 
 function debounce(func, delay) {
     let timeoutId;
@@ -30,9 +31,10 @@ const VideoContainer = ({ categoryId }) => {
             const url = categoryId !== null && categoryId !== 'all'
                 ? `${YOUTUBE_API_URL}&pageToken=${pageToken}&videoCategoryId=${categoryId}` 
                 : `${YOUTUBE_API_URL}&pageToken=${pageToken}`;
-            const response = await fetch(url);
 
-            if (response.status === 400 || response.status === 404) {
+            const response = await fetch(url);
+           
+            if (RESPONSE_CODE.includes(response.status)) {
                 dispatch(addLoader(false));
                 dispatch(addVideos({
                     videos: [],
