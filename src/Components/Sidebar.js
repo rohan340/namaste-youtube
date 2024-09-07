@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { sideBarrItems } from "../Utils/contants";
+import { sideBarrItems } from "../Utils/constants";
 
 const Sidebar = ()=>{
     return(

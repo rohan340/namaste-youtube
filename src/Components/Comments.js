@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { YOUTUBE_API_KEY } from "../Utils/contants";
+import { YOUTUBE_API_KEY } from "../Utils/constants";
 import CommentsList from "./CommentsList";
 
 const Comments = ({ commentsCount, videoId })=>{

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import VideoCards from "./VideoCards";
 import { useEffect } from "react";
-import { YOUTUBE_API_URL } from "../Utils/contants";
+import { YOUTUBE_API_URL } from "../Utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addLoader, addVideos } from "../Utils/appSlice";
 import VideoCardsShimmerEffect from "./VideoCardsShimmerEffect";

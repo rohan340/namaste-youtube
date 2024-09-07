@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { YOUTUBE_API_KEY } from "../Utils/contants";
+import { YOUTUBE_API_KEY } from "../Utils/constants";
 import { convertToRelativeTime, formatViewsCount } from "../Hooks/useFormatDateView";
 import Comments from "./Comments";
 

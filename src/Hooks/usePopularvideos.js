@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { YOUTUBE_API_URL } from "../Utils/contants";
+import { YOUTUBE_API_URL } from "../Utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addPopularVideos } from "../Utils/appSlice";
 

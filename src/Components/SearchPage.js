@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from "react-router-dom";
-import { YOUTUBE_API_KEY } from "../Utils/contants"
+import { YOUTUBE_API_KEY } from "../Utils/constants"
 import { useEffect, useState, useCallback } from "react";
 import SearchResultsCards from "./SearchResultsCards";
 

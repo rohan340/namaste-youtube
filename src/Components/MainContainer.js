@@ -1,5 +1,5 @@
 import ButtonList from "./ButtonList";
-import { YOUTUBE_VIDEO_CATEGORY_LIST } from "../Utils/contants";
+import { YOUTUBE_VIDEO_CATEGORY_LIST } from "../Utils/constants";
 import VideoContainer from "./VideoContainer";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,7 @@ const MainContainer = ()=>{
     const fetchYouTubeCategories = async () => {
         try{
             const response = await fetch(`${YOUTUBE_VIDEO_CATEGORY_LIST}`);
+            if(response.status === 403) return dispatch(addCategories([]));
             const data = await response.json();
             dispatch(addCategories(data.items));
         }
