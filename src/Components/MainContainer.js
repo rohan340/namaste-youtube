@@ -27,7 +27,7 @@ const MainContainer = ()=>{
     },[categories]);
 
     return(
-        <div className="flex flex-col p-3 border shadow-lg w-[86%]">
+        <div className="flex flex-col p-3 border w-[86%]">
             <div className="flex gap-4 p-2 overflow-x-scroll whitespace-nowrap">
                 <ButtonList key="all-btn" isActive={ categoryId === "all" || categoryId === null} info={{id:'all',snippet:{title:'All'}}} />
                 {

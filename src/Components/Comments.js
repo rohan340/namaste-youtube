@@ -17,7 +17,6 @@ const Comments = ({ commentsCount, videoId })=>{
             }
 
             const data = await response.json();
-            console.log(data)
             setCommentsList(data?.items)
         }
         catch(error){

@@ -48,7 +48,7 @@ const Header = () => {
     }, [searchQuery]);
 
     return (
-        <div className="flex justify-between shadow-lg fixed w-full bg-white z-[1]">
+        <div className="flex justify-between fixed w-full bg-white z-[1]">
             <div className="flex">
                 <img
                     className="w-10 h-10 mt-3 ml-6 cursor-pointer hover:bg-gray-300 p-2 hover:rounded-full"

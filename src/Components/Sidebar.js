@@ -5,7 +5,7 @@ import { sideBarrItems } from "../Utils/contants";
 
 const Sidebar = ()=>{
     return(
-        <div className="sidebar w-1/6 p-1 shadow-lg">
+        <div className="sidebar w-1/6 p-1">
             <div className="flex flex-col gap-1 mt-3">
                 <Link to="/">
                     <div className="hover:bg-gray-200 cursor-pointer flex items-center p-2 rounded">

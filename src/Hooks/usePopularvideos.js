@@ -12,7 +12,6 @@ const usePopularVideos = () => {
         try{
             const data = await fetch(`${YOUTUBE_API_URL}&pageToken=${pageToken}`);
             const json = await data.json();
-            console.log(json)
             dispatch(addPopularVideos(json.items)); 
         }
         catch(error){

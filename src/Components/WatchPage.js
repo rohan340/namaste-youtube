@@ -48,7 +48,7 @@ const WatchPage = () => {
         <div className="flex flex-col pl-8 pt-4 gap-4 w-[70%]">
             <iframe
                 className="rounded-2xl"
-                width="1000"
+                width="1020"
                 height="500"
                 src={"https://www.youtube.com/embed/" + videoId} title="YouTube video player" frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
